@@ -6,30 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chatback Welcome</title>
-    <script src="app.js"></script>
 </head>
 
 <body>
     <h1>Welcome to Chatback</h1>
-    <h2>Have an account? Then
-        <button id="loginBtn">Log in</button>
-    </h2>
-    <h2>New here? Then
-        <button id="signupBtn">Sign Up</button>
-    </h2>
-    <div id="loginForm">
-        Name:
-        <input type="text">
-        <br> Nickname:
-        <input type="text">
-        <br> Gender:
-        <select name="genders" id="genderSelect">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-    </div>
-
+    <!-- <h3 id="loading">Loading</h3> -->
+    <button id="signBtn">Sign In/Up</button>
+    <div id="firebaseuiForm"></div>
 
     <!-- Script Tags -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
@@ -44,6 +27,29 @@
             messagingSenderId: "165444001038"
         };
         firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <script>
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    return true;
+                },
+                uiShown: function () {
+                    document.getElementById('loading').style.display = 'none';
+                }
+            },
+            signInFlow: 'popup',
+            signInSuccessUrl: 'lobby.html',
+            signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID,],
+            tosUrl: '<empty-for-now>'
+        };
+        var signBtn = document.getElementById('signBtn');
+        signBtn.onclick = () => {
+            ui.start('#firebaseuiForm', uiConfig)
+        }
     </script>
 </body>
 
