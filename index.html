@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatback Welcome</title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <h1>Welcome to Chatback</h1>
+    <h2>Have an account? Then
+        <button id="loginBtn">Log in</button>
+    </h2>
+    <h2>New here? Then
+        <button id="signupBtn">Sign Up</button>
+    </h2>
+    <div id="loginForm">
+        Name:
+        <input type="text">
+        <br> Nickname:
+        <input type="text">
+        <br> Gender:
+        <select name="genders" id="genderSelect">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+
+    <!-- Script Tags -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBCVy7QIFCrTOgnHrHPj2Zy8RtKRa4-NLA",
+            authDomain: "chatback-d00f9.firebaseapp.com",
+            databaseURL: "https://chatback-d00f9.firebaseio.com",
+            projectId: "chatback-d00f9",
+            storageBucket: "",
+            messagingSenderId: "165444001038"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
