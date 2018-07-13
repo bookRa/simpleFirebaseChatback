@@ -5,3 +5,4 @@ an account. Log in (just realized...I didn't put a log out...I'll do that later 
 firebase.auth().signOut())
 
 90% of the code is just copy and paste. 
+Based off the FirebaseUI docs: https://firebase.google.com/docs/auth/#implementation_paths
