@@ -1,10 +1,10 @@
 var config = {
-  apiKey: "AIzaSyBCVy7QIFCrTOgnHrHPj2Zy8RtKRa4-NLA",
-  authDomain: "chatback-d00f9.firebaseapp.com",
-  databaseURL: "https://chatback-d00f9.firebaseio.com",
-  projectId: "chatback-d00f9",
+  apiKey: "YOUR OWN",
+  authDomain: "YOUR OWN",
+  databaseURL: "YOUR OWN",
+  projectId: "YOUR OWN",
   storageBucket: "",
-  messagingSenderId: "165444001038"
+  messagingSenderId: "YOUR OWN"
 };
 firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(user => {
